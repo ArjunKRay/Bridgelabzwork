@@ -5,6 +5,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import web.Student;
 import web.StudentDAOImpl;
@@ -55,6 +56,13 @@ public class StudentServlet extends HttpServlet
 		String username=request.getParameter("username");
 		String password=request.getParameter("password");
 		
+		HttpSession session = request.getSession();
+		 session.setAttribute("username", username);
+		 session.setAttribute("password", password);
+		 
+
+		
+		
 		if(operation != null && operation.equals("addUser"))
 		{
 			String name=request.getParameter("name");
@@ -68,6 +76,8 @@ public class StudentServlet extends HttpServlet
 			u.setContact(contact);
 			u.setUsername(username);
 			u.setPassword(password);
+			
+			
 			
 			flag = ui.addUser(u);
 			
@@ -88,7 +98,10 @@ public class StudentServlet extends HttpServlet
 		
 		else if(operation.equals("login"))
 		{
-			
+			 String username1= (String)session.getAttribute(username);
+			 String password1 =(String)session.getAttribute(password);
+			 session.setMaxInactiveInterval(5);
+		
 			flag=ui.login(username, password);
 			
 			if(flag==true)
