@@ -1,17 +1,17 @@
 [ {
   "firstName" : "ABHI",
   "lastName" : "SHEK",
-  "address" : "MYSORE",
-  "city" : "MYSORE",
-  "state" : "KARNATAKA",
+  "address" : "delhi",
+  "city" : "delhi",
+  "state" : "delhi",
   "zip" : "574101",
   "phone" : "8949461665"
 }, {
-  "firstName" : "VENKATESH",
-  "lastName" : "ER",
-  "address" : "BANGLORE",
-  "city" : "BANGLORE",
-  "state" : "KARNATAKA",
+  "firstName" : "Vidya",
+  "lastName" : "Singh",
+  "address" : "Mumbai",
+  "city" : "Mumbai",
+  "state" : "Maharastra",
   "zip" : "572101",
   "phone" : "9746498945"
 } ]
